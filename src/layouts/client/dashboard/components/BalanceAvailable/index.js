@@ -32,45 +32,47 @@ export default function BalanceAvailable() {
       variant="gradient"
       // flexDirection="row"
     >
-      <Grid item xs={12} lg={5}>
-        <DefaultDoughnutChart
-          title={
-            <SoftTypography component="h6" fontWeight="bold" fontSize="1.5em" color="white">
-              $4833.63
-            </SoftTypography>
-          }
-          description={
-            <SoftTypography component="small" fontWeight="lighter" fontSize=".87em" color="white">
-              Available
-            </SoftTypography>
-          }
-          chart={balanceDoughnutChart}
-          height="12rem"
-        />
-      </Grid>
-      <Grid item xs={12} lg={7}>
-        {/* React table method will be used here */}
-        <table className="table align-items-center mb-0">
-          <tbody>
-            {testData.map(({ img, name, value }) => (
-              <tr>
-                <td>
-                  <div className="d-flex px-2 py-0">
-                    <div>
-                      <img src={img} className="avatar avatar-xs me-2" alt="logo_atlassian" />
+      <Grid container>
+        <Grid item xs={12} sm={12} lg={5}>
+          <DefaultDoughnutChart
+            title={
+              <SoftTypography component="h6" fontWeight="bold" fontSize="1.5em" color="white">
+                $4833.63
+              </SoftTypography>
+            }
+            description={
+              <SoftTypography component="small" fontWeight="lighter" fontSize=".87em" color="white">
+                Available
+              </SoftTypography>
+            }
+            chart={balanceDoughnutChart}
+            height="12rem"
+          />
+        </Grid>
+        <Grid item xs={12} sm={12} lg={7}>
+          {/* React table method will be used here */}
+          <table className="table align-items-center mb-0">
+            <tbody>
+              {testData.map(({ img, name, value }) => (
+                <tr>
+                  <td>
+                    <div className="d-flex px-2 py-0">
+                      <div>
+                        <img src={img} className="avatar avatar-xs me-2" alt="logo_atlassian" />
+                      </div>
+                      <div className="d-flex flex-column justify-content-center">
+                        <h6 className="mb-0 text-sm text-white opacity-8">{name}</h6>
+                      </div>
                     </div>
-                    <div className="d-flex flex-column justify-content-center">
-                      <h6 className="mb-0 text-sm text-white opacity-8">{name}</h6>
-                    </div>
-                  </div>
-                </td>
-                <td className="align-middle text-center text-sm">
-                  <span className="text-xs font-weight-bold text-white opacity-8">{value}</span>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+                  </td>
+                  <td className="align-middle text-center text-sm">
+                    <span className="text-xs font-weight-bold text-white opacity-8">{value}</span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </Grid>
       </Grid>
     </SoftBox>
   );
