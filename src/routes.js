@@ -37,6 +37,7 @@ import TopUps from "layouts/client/financials/components/TopUps";
 // Soft UI Dashboard React icons
 import { CreditCard, Help, Home, Person } from "@mui/icons-material";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
+import TransactionDetails from "layouts/client/financials/components/Details";
 
 const routes = [
   {
@@ -115,6 +116,14 @@ const routes = [
             key: "topups",
             route: "/financials/transactions/topups",
             component: <TopUps />,
+            collapse: false,
+          },
+          {
+            type: "collapse",
+            name: "Details",
+            key: "details",
+            route: "/financials/transactions/details",
+            component: <TransactionDetails />,
             collapse: false,
           },
         ],
