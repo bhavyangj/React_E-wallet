@@ -38,6 +38,9 @@ import TopUps from "layouts/client/financials/components/TopUps";
 import { CreditCard, Help, Home, Person } from "@mui/icons-material";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import TransactionDetails from "layouts/client/financials/components/Details";
+import AdminDashboard from "layouts/admin/dashboard";
+import AdminTransactions from "layouts/admin/Transactions";
+import AdminReports from "layouts/admin/reports";
 
 const routes = [
   {
@@ -234,13 +237,14 @@ const routes = [
     key: "admin",
     route: "/admin/dashboard",
     icon: <Home />,
+    component: <AdminDashboard />,
     collapse: [
       {
         type: "collapse",
         name: "Dashboard",
         key: "admin-dashboard",
         route: "/admin/dashboard",
-        component: <DefaultComponent>Admin Dashboard</DefaultComponent>,
+        component: <AdminDashboard />,
         collapse: false,
       },
       {
@@ -248,23 +252,15 @@ const routes = [
         name: "Transactions",
         key: "admin-transactions",
         route: "/admin/transactions",
-        component: <DefaultComponent>Admin Transactions</DefaultComponent>,
+        component: <AdminTransactions />,
         collapse: false,
       },
       {
         type: "collapse",
         name: "Reports",
         key: "admin-reports",
-        route: "/admin/resports",
-        component: <DefaultComponent>Admin Reports</DefaultComponent>,
-        collapse: false,
-      },
-      {
-        type: "collapse",
-        name: "New User",
-        key: "admin-new-user",
-        route: "/admin/new-user",
-        component: <DefaultComponent>Admin New User</DefaultComponent>,
+        route: "/admin/reports",
+        component: <AdminReports />,
         collapse: false,
       },
     ],
