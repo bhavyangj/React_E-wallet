@@ -41,6 +41,7 @@ import TransactionDetails from "layouts/client/financials/components/Details";
 import AdminDashboard from "layouts/admin/dashboard";
 import AdminTransactions from "layouts/admin/Transactions";
 import AdminReports from "layouts/admin/reports";
+import NewUser from "layouts/admin/NewUser";
 
 const routes = [
   {
@@ -261,6 +262,14 @@ const routes = [
         key: "admin-reports",
         route: "/admin/reports",
         component: <AdminReports />,
+        collapse: false,
+      },
+      {
+        type: "collapse",
+        name: "New User",
+        key: "admin-new-user",
+        route: "/admin/new-user",
+        component: <NewUser />,
         collapse: false,
       },
     ],
